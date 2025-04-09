@@ -1,0 +1,67 @@
+body {
+      font-family: "Times New Roman", Serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+    /* Constrain scrolling area on larger screens */
+    @media (min-width: 992px) {
+      .scroll-container {
+        max-width: 800px;
+        margin: 0 auto 30px;
+      }
+    }
+    /* Default scroll container styles */
+    .scroll-container {
+      overflow: hidden;
+      white-space: nowrap;
+      margin-bottom: 30px;
+    }
+    /* Scrolling row container */
+    .scroll-row {
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .scroll-row a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .scroll-row img {
+      max-height: 150px;
+      vertical-align: middle;
+      transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    }
+    /* Enlarge image on hover */
+    .scroll-row img:hover {
+      transform: scale(1.1);
+      z-index: 10;
+    }
+    /* First row: faster scrolling */
+    .scroll-row.row1 {
+      animation: scroll1 20s linear infinite;
+    }
+    /* Second row: slower scrolling with offset delay */
+    .scroll-row.row2 {
+      animation: scroll2 30s linear infinite;
+      animation-delay: -10s;
+    }
+    /* Animation keyframes (both rows move left by 50% for seamless looping) */
+    @keyframes scroll1 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes scroll2 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .button {
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.button:hover {
+  transform: scale(1.1); /* Increase size by 10% */
+}
